@@ -1,0 +1,386 @@
+Compilation réelle : javac -parameters -encoding UTF-8 (11 fichiers Java)
+Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:MaxMetaspaceSize=160m -Duser.timezone=UTC
+Exécution réelle : JUnit Platform Console, découverte des tests du projet
+Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:MaxMetaspaceSize=160m -Duser.timezone=UTC
+Oct 15, 2026 12:56:15 AM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate ORM core version 5.6.15.Final
+Oct 15, 2026 12:56:16 AM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
+INFO: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+Oct 15, 2026 12:56:16 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+Oct 15, 2026 12:56:16 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://host.docker.internal:13317/db_tp_hibernate?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC]
+Oct 15, 2026 12:56:16 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001001: Connection properties: {password=****, user=root}
+Oct 15, 2026 12:56:16 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001003: Autocommit mode: false
+Oct 15, 2026 12:56:16 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
+INFO: HHH000115: Hibernate connection pool size: 20 (min=1)
+Oct 15, 2026 12:56:18 AM org.hibernate.dialect.Dialect <init>
+INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+Oct 15, 2026 12:56:20 AM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4c3de38e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Oct 15, 2026 12:56:22 AM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Hibernate: 
+    insert 
+    into
+        salles
+        (code, libelle) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        machines
+        (marque, ref, salle_id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        machine0_.id as id1_0_0_,
+        machine0_.marque as marque2_0_0_,
+        machine0_.ref as ref3_0_0_,
+        machine0_.salle_id as salle_id4_0_0_ 
+    from
+        machines machine0_ 
+    where
+        machine0_.id=?
+Hibernate: 
+    select
+        machine0_.id as id1_0_0_,
+        machine0_.marque as marque2_0_0_,
+        machine0_.ref as ref3_0_0_,
+        machine0_.salle_id as salle_id4_0_0_ 
+    from
+        machines machine0_ 
+    where
+        machine0_.id=?
+Hibernate: 
+    update
+        machines 
+    set
+        marque=?,
+        ref=?,
+        salle_id=? 
+    where
+        id=?
+Hibernate: 
+    select
+        machine0_.id as id1_0_,
+        machine0_.marque as marque2_0_,
+        machine0_.ref as ref3_0_,
+        machine0_.salle_id as salle_id4_0_ 
+    from
+        machines machine0_ 
+    where
+        machine0_.marque=? 
+    order by
+        machine0_.id
+Hibernate: 
+    select
+        machine0_.id as id1_0_,
+        machine0_.marque as marque2_0_,
+        machine0_.ref as ref3_0_,
+        machine0_.salle_id as salle_id4_0_ 
+    from
+        machines machine0_ 
+    where
+        machine0_.marque=? 
+    order by
+        machine0_.id
+Hibernate: 
+    select
+        machine0_.id as id1_0_0_,
+        machine0_.marque as marque2_0_0_,
+        machine0_.ref as ref3_0_0_,
+        machine0_.salle_id as salle_id4_0_0_ 
+    from
+        machines machine0_ 
+    where
+        machine0_.id=?
+Hibernate: 
+    delete 
+    from
+        machines 
+    where
+        id=?
+Hibernate: 
+    select
+        machine0_.id as id1_0_0_,
+        machine0_.marque as marque2_0_0_,
+        machine0_.ref as ref3_0_0_,
+        machine0_.salle_id as salle_id4_0_0_ 
+    from
+        machines machine0_ 
+    where
+        machine0_.id=?
+Hibernate: 
+    select
+        salle0_.id as id1_1_1_,
+        salle0_.code as code2_1_1_,
+        salle0_.libelle as libelle3_1_1_,
+        machines1_.salle_id as salle_id4_0_3_,
+        machines1_.id as id1_0_3_,
+        machines1_.id as id1_0_0_,
+        machines1_.marque as marque2_0_0_,
+        machines1_.ref as ref3_0_0_,
+        machines1_.salle_id as salle_id4_0_0_ 
+    from
+        salles salle0_ 
+    left outer join
+        machines machines1_ 
+            on salle0_.id=machines1_.salle_id 
+    where
+        salle0_.id=?
+Hibernate: 
+    delete 
+    from
+        salles 
+    where
+        id=?
+Hibernate: 
+    insert 
+    into
+        salles
+        (code, libelle) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        machines
+        (marque, ref, salle_id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        machine0_.id as id1_0_0_,
+        machine0_.marque as marque2_0_0_,
+        machine0_.ref as ref3_0_0_,
+        machine0_.salle_id as salle_id4_0_0_ 
+    from
+        machines machine0_ 
+    where
+        machine0_.id=?
+Hibernate: 
+    select
+        salle0_.id as id1_1_1_,
+        salle0_.code as code2_1_1_,
+        salle0_.libelle as libelle3_1_1_,
+        machines1_.salle_id as salle_id4_0_3_,
+        machines1_.id as id1_0_3_,
+        machines1_.id as id1_0_0_,
+        machines1_.marque as marque2_0_0_,
+        machines1_.ref as ref3_0_0_,
+        machines1_.salle_id as salle_id4_0_0_ 
+    from
+        salles salle0_ 
+    left outer join
+        machines machines1_ 
+            on salle0_.id=machines1_.salle_id 
+    where
+        salle0_.id=?
+Hibernate: 
+    delete 
+    from
+        machines 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        salles 
+    where
+        id=?
+Hibernate: 
+    select
+        machine0_.id as id1_0_0_,
+        machine0_.marque as marque2_0_0_,
+        machine0_.ref as ref3_0_0_,
+        machine0_.salle_id as salle_id4_0_0_ 
+    from
+        machines machine0_ 
+    where
+        machine0_.id=?
+Hibernate: 
+    insert 
+    into
+        salles
+        (code, libelle) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        count(salle0_.id) as col_0_0_ 
+    from
+        salles salle0_
+Hibernate: 
+    insert 
+    into
+        salles
+        (code, libelle) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        salles
+        (code, libelle) 
+    values
+        (?, ?)
+Oct 15, 2026 12:56:27 AM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+WARN: SQL Error: 1062, SQLState: 23000
+Oct 15, 2026 12:56:27 AM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+ERROR: Duplicate entry '3c58d1a9-3a55-4268-b85d-08d93e7bbcf7' for key 'salles.UK_nlau6jq0oc83ba812xrq9lcyo'
+ROLLBACK : ConstraintViolationException — could not execute statement
+Hibernate: 
+    select
+        count(salle0_.id) as col_0_0_ 
+    from
+        salles salle0_
+Hibernate: 
+    insert 
+    into
+        salles
+        (code, libelle) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        salle0_.id as id1_1_1_,
+        salle0_.code as code2_1_1_,
+        salle0_.libelle as libelle3_1_1_,
+        machines1_.salle_id as salle_id4_0_3_,
+        machines1_.id as id1_0_3_,
+        machines1_.id as id1_0_0_,
+        machines1_.marque as marque2_0_0_,
+        machines1_.ref as ref3_0_0_,
+        machines1_.salle_id as salle_id4_0_0_ 
+    from
+        salles salle0_ 
+    left outer join
+        machines machines1_ 
+            on salle0_.id=machines1_.salle_id 
+    where
+        salle0_.id=?
+Hibernate: 
+    delete 
+    from
+        salles 
+    where
+        id=?
+Hibernate: 
+    insert 
+    into
+        salles
+        (code, libelle) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        salle0_.id as id1_1_1_,
+        salle0_.code as code2_1_1_,
+        salle0_.libelle as libelle3_1_1_,
+        machines1_.salle_id as salle_id4_0_3_,
+        machines1_.id as id1_0_3_,
+        machines1_.id as id1_0_0_,
+        machines1_.marque as marque2_0_0_,
+        machines1_.ref as ref3_0_0_,
+        machines1_.salle_id as salle_id4_0_0_ 
+    from
+        salles salle0_ 
+    left outer join
+        machines machines1_ 
+            on salle0_.id=machines1_.salle_id 
+    where
+        salle0_.id=?
+Hibernate: 
+    update
+        salles 
+    set
+        code=?,
+        libelle=? 
+    where
+        id=?
+Hibernate: 
+    select
+        salle0_.id as id1_1_0_,
+        salle0_.code as code2_1_0_,
+        salle0_.libelle as libelle3_1_0_ 
+    from
+        salles salle0_ 
+    where
+        salle0_.id=?
+Hibernate: 
+    select
+        salle0_.id as id1_1_,
+        salle0_.code as code2_1_,
+        salle0_.libelle as libelle3_1_ 
+    from
+        salles salle0_ 
+    order by
+        salle0_.id
+Hibernate: 
+    select
+        salle0_.id as id1_1_1_,
+        salle0_.code as code2_1_1_,
+        salle0_.libelle as libelle3_1_1_,
+        machines1_.salle_id as salle_id4_0_3_,
+        machines1_.id as id1_0_3_,
+        machines1_.id as id1_0_0_,
+        machines1_.marque as marque2_0_0_,
+        machines1_.ref as ref3_0_0_,
+        machines1_.salle_id as salle_id4_0_0_ 
+    from
+        salles salle0_ 
+    left outer join
+        machines machines1_ 
+            on salle0_.id=machines1_.salle_id 
+    where
+        salle0_.id=?
+Hibernate: 
+    delete 
+    from
+        salles 
+    where
+        id=?
+Hibernate: 
+    select
+        salle0_.id as id1_1_0_,
+        salle0_.code as code2_1_0_,
+        salle0_.libelle as libelle3_1_0_ 
+    from
+        salles salle0_ 
+    where
+        salle0_.id=?
+Oct 15, 2026 12:56:28 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PoolState stop
+INFO: HHH10001008: Cleaning up connection pool [jdbc:mysql://host.docker.internal:13317/db_tp_hibernate?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC]
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Jupiter ✔
+│  └─ PersistenceTest ✔
+│     ├─ factorySingletonEtMySql() ✔
+│     ├─ crudMachineEtHqlParametre() ✔
+│     ├─ cascadeSalleMachines() ✔
+│     ├─ rollbackAnnuleToutesLesEcritures() ✔
+│     └─ crudSalle() ✔
+├─ JUnit Vintage ✔
+└─ JUnit Platform Suite ✔
+
+Test run finished after 16060 ms
+[         4 containers found      ]
+[         0 containers skipped    ]
+[         4 containers started    ]
+[         0 containers aborted    ]
+[         4 containers successful ]
+[         0 containers failed     ]
+[         5 tests found           ]
+[         0 tests skipped         ]
+[         5 tests started         ]
+[         0 tests aborted         ]
+[         5 tests successful      ]
+[         0 tests failed          ]
+

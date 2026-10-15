@@ -1,0 +1,13 @@
+services:
+  mysql:
+    image: mysql:8.0
+    ports:
+      - "127.0.0.1:${DB_PORT:-13317}:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: labroot
+      MYSQL_DATABASE: db_tp_hibernate
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-plabroot"]
+      interval: 5s
+      timeout: 5s
+      retries: 30

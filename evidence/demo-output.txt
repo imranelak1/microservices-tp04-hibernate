@@ -1,0 +1,13 @@
+Compilation réelle : javac -parameters -encoding UTF-8 (11 fichiers Java)
+Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:MaxMetaspaceSize=160m -Duser.timezone=UTC
+
+$ java test.MainTest 
+Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:MaxMetaspaceSize=160m -Duser.timezone=UTC
+Oct 15, 2026 12:57:08 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+BASE REELLE : MySQL 8.0.46
+Données insérées avec succès !
+Salle{id=16, code='S1-1792025834069', libelle='Salle Informatique'}
+Machine{id=6, ref='M-101-1792025834069', marque='Dell'}
+HQL par marque Lenovo : [Machine{id=6, ref='M-101-1792025834069', marque='Lenovo'}]
+Suppression vérifiée : true
